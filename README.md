@@ -1,6 +1,10 @@
-Este projeto será desenvolvido utilizando TypeScript e vai salvar as informações dos clientes em um Banco de Dados.
+Este projeto será desenvolvido utilizando JavaScript e Banco de Dados MySQL.
 
-- Receber Nome, CPF, Endereço, Telefone
+Objetivos:
+- Receber Nome, CPF, Endereço, Telefone, Profissão, Salário
 - Salvar informações no banco de dados
 - Listas clientes
 - Buscar um cliente específico
+- Buscar clientes com maiores salários
+
+
