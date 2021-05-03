@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 
 //Conexão com o Banco de Dados MySQL
-const sequelize = new Sequelize('cadastrocliente_js', 'root', 'lburguerm59',{
+const sequelize = new Sequelize('cadastrocliente_js', 'root', 'senha',{
     host: 'localhost',
     dialect: 'mysql'
 })

@@ -1,0 +1,9 @@
+<h1>Lista de Clientes Cadastrados</h1>
+
+{{#each posts}}
+    <h2>{{dataValues.nomePessoa}}</h2>
+    <small>E-mail: {{dataValues.Email}}</small>
+    <hr>
+    <small>Data de Cadastro: {{dataValues.createdAt}}</small>
+    <hr>
+{{/each}}

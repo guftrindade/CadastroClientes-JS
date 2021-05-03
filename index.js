@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars')
 const bodyParser = require ('body-parser')
-const Post = require('./models/Post')
+const Post = require('./models/Post');
+const { response } = require('express');
 
 
 //Config
@@ -17,6 +18,14 @@ const Post = require('./models/Post')
 
     
 //Rotas
+
+    app.get('/', function (req, res){
+        Post.findAll({order:[['id','ASC']]}).then(function(posts){
+            console.log(posts);
+            res.render('home', {posts: posts})
+        })
+    })
+
     app.get('/cad', function(req, res){
         res.render('formulario')
     })
@@ -25,13 +34,14 @@ const Post = require('./models/Post')
         Post.create({
             nomePessoa: req.body.nomePessoa,
             DtaNascimento: req.body.DtaNascimento,
-            //CPF: req.body.CPF,
-            //Endereco: req.body.Endereco,
-            //Telefone: req.body.Telefone,
-            //Email: req.body.Email
+            CPF: req.body.CPF,
+            Endereco: req.body.Endereco,
+            Telefone: req.body.Telefone,
+            Email: req.body.Email
 
         }).then(function(){
-            res.send("CLIENTE CADASTRADO COM SUCESSO!")
+            res.redirect('/')
+
         }).catch(function(erro){
             res.send("HOUVE UM ERRO: " + erro)
         })
