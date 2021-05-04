@@ -1,8 +1,13 @@
 const db = require('./db')
 
 //Criando a tabela
-const Post = db.sequelize.define('cadastroClientes_JS',{
-    nomePessoa: {
+const Post = db.sequelize.define('Pessoa',{
+    IdPessoa:{
+        type:db.Sequelize.NUMBER,
+        primaryKey:true, 
+        autoIncrement:true
+    },
+    NomePessoa: {
         type: db.Sequelize.STRING
     },
     DtaNascimento: {
@@ -20,7 +25,10 @@ const Post = db.sequelize.define('cadastroClientes_JS',{
     Email: {
         type: db.Sequelize.STRING
     }
-})
+}, {
+    timestamps: false, // Removendo createdAt e updatedAt
+    tableName:'Pessoa' // Nome da tabela cadastrado no banco de dados
+});
 
 //Post.sync({force:true})
 module.exports = Post

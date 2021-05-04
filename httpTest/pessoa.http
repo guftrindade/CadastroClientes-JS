@@ -1,0 +1,11 @@
+POST http://localhost:8081/add HTTP/1.1
+content-type: application/json
+
+{
+    "NomePessoa"    :"André",
+    "DtaNascimento" :"1991-05-30",
+    "CPF" : "09891023605",
+    "Endereco":"Rua teste 123",
+    "Telefone": "61981918034",
+    "Email" : "andre@gmail.com"
+}
